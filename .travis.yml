@@ -2,5 +2,5 @@ services: postgresql
 before_script:
   - sudo apt-get install build-essential autoconf asciidoc
 script:
-  - psql --version
-  - psql -c "SELECT 1"
+  - psql -U postgres --version
+  - psql -U postgres -c "SELECT 1"
