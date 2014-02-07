@@ -1,9 +1,4 @@
 services: postgresql
-addons:
-  postgresql:
-    - 9.1
-    - 9.2
-    - 9.3
 before_script:
   - sudo apt-get install build-essential autoconf asciidoc
 script:
