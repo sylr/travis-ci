@@ -1,9 +1,17 @@
 language: c
-addons:
-  - postgresql: 9.1
-  - postgresql: 9.2
-before_script:
+
+before_install:
   - sudo apt-get install build-essential autoconf
+
+before_script:
+   - sudo service postgresql start ${POSTGRES_VERSION}
+
 script:
   - dpkg -l | grep postgres
   - psql -U postgres -c "SELECT version()"
+
+env:
+  matrix:
+    - POSTGRESQL_VERSION=9.1
+    - POSTGRESQL_VERSION=9.2
+    - POSTGRESQL_VERSION=9.3
