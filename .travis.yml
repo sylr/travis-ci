@@ -8,3 +8,4 @@ before_script:
   - sudo apt-get install build-essential autoconf asciidoc
 script:
   - psql --version
+  - psql -c "SELECT 1"
