@@ -9,7 +9,8 @@ before_script:
   - sudo service postgresql start ${POSTGRESQL_VERSION}
 
 script:
-  - psql -U postgres -c "SELECT version()"
+  - psql -U postgres -c "SELECT 1"
+  - /bin/true
 
 env:
   matrix:
